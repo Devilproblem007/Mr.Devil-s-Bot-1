@@ -15,8 +15,8 @@ st.title("Mr.devil's AI assistant")
 
 command=st.chat_input("HOW CAN I HELP YOU?")
 
-if "message" not in
-st.session_state: st.session_state.message=[]
+if "message" not in st.session_state: 
+	st.session_state.message=[]
 
 for chat in st.session state.message:
 	with st.chat_message(chat["role"]):
