@@ -24,10 +24,10 @@ for chat in st.session_state.message:
 
 if command: 
     with st.chat_message("user"):
-     st.write(command)
-     st.session_state.message.append({"role":"user","m essage":command})
+        st.write(command)
+        st.session_state.message.append({"role":"user","m essage":command})
 
-if "hello" in command:
+if "fellow" in command:
     with st.chat_message("bot"): 
         st.write("Hi How can i help you.")
         st.session_state.message.append({"role":"bot","m essage":"Hi How can i help you."})
