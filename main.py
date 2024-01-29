@@ -35,16 +35,6 @@ elif "who" in command:
     with st.chat_message("bot"):
         st.write("Im Mr.Devil's ai assistant")
         st.session_state.message.append({"role":"bot","message":"Im gamkers ai assistant"})
-elif "hi" in command:
-    with st.chat_message("bot"):
-	st.write("hello good morning")
-        st.session_state.message.append({"role":"bot","message":"hello good morning"})
-
-else:
-     with st.chat_message("bot"):
-         data=ai(command)
-	st.write(data)
-        st.session_state.message.append({"role":"bot","message":data})
 
 
 
