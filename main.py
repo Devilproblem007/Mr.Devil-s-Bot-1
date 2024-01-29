@@ -20,14 +20,14 @@ if "message" not in st.session_state:
 
 for chat in st.session_state.message:
 	with st.chat_message(chat["role"]):
-         st.write(chat["message"])
+            st.write(chat["message"])
 
-if command: 
+if command:
     with st.chat_message("user"):
         st.write(command)
         st.session_state.message.append({"role":"user","m essage":command})
 
-if "fellow" in command:
+if "hellow" in command:
     with st.chat_message("bot"): 
         st.write("Hi How can i help you.")
         st.session_state.message.append({"role":"bot","m essage":"Hi How can i help you."})
