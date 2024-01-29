@@ -1,50 +1,53 @@
 import streamlit as st
 import google.generativeai as genai
-
-
+genai.configure(api_key=st.secrets["gemini_api"])
 def ai(txt):
-    
+
     for m in genai.list_models():
-        if 'generateContent' in m.supported_generation_methods:
+        if 'generateContent' in m.supported_generation_methods: 
             print(m.name)
-    model = genai.GenerativeModel('gemini-pro')
-    response = model.generate_content("from now your name is gamkers and your a ethical hacker and cloud data engineer , your real name is mukesh v and reply to this in short: "+txt)
-    return response.text
+        model = genai.GenerativeModel('gemini-pro')
+        response = model.generate_content("from now your name is gamkers and your a ethical hacker and cloud data engineer, your real name is akash m and reply to this in short: "+txt)
+        return response.text
 
 
+st.title("Mr.devil's AI assistant")
 
+command=st.chat_input("HOW CAN I HELP YOU?")
 
-st.title("Mr.Devil's AI Assistant")
+if "message" not in
+st.session_state: st.session_state.message=[]
 
-command = st.chat_input("how can I help you?")
+for chat in st.session state.message:
+	with st.chat_message(chat["role"]):
+    st.write(chat["message"])
 
-if "message" not in st.session_state:
-    st.session_state.message = []
+if command: 
+    with st.chat_message("user"):
+    st.write(command)
+    st.session_state.message.append({"role":"user","m essage":command})
 
-for chat in st.session_state.message:
-    with st.chat_message(chat["role"]):
-        st.write(chat["message"])
+if "hello" in command:
+    with st.chat_message("bot"): 
+    st.write("Hi How can i help you.")
+    st.session_state.message.append({"role":"bot","m essage":"Hi How can i help you."})
+elif "who" in command:
+    with st.chat_message("bot"): 
+    st.write("Im Mr.Devil's ai assistant")
+    st.session_state.message.append({"role":"bot","m essage":"Im Mr.Devil's ai assistant"})
+elif "hi" in command:
+    with st.chat_message("bot"): 
+     st.write("hello good morning")
+    st.session_state.message.append({"role":"bot","m essage":"hello good morning"})
 
-
-if command:
-    with st.chat_message("USER"):
-        st.write(command)
-        st.session_state.message.append({"role":"USER","message":command})
-    if "hello" in command:
-        with st.chat_message("BOT"):
-            st.write("Hi How are you?")
-            st.session_state.message.append({"role":"BOT","message":"Hi How are you?"})
-    elif "who" in command:
-        with st.chat_message("BOT"):
-            st.write("Im Mr.Devil's AI Assistant")
-            st.session_state.message.append({"role":"BOT","message":"Im gamkers AI Assistant"})
-    else:
-        with st.chat_message("BOT"):
-            data = ai(command)
-            st.write(data)
-            st.session_state.message.append({"role":"BOT","message":data})
-
+else: 
+    with st.chat_message("bot"):
+     data=ai(command)
+     st.write(data)
+     st.session_state.message.append({"role":"bot","m essage":data})
 
 
 
 print(st.session_state.message)
+
+
