@@ -18,9 +18,9 @@ command=st.chat_input("HOW CAN I HELP YOU?")
 if "message" not in st.session_state: 
 	st.session_state.message=[]
 
-for chat in st.session state.message:
+for chat in st.session_state.message:
 	with st.chat_message(chat["role"]):
-    st.write(chat["message"])
+         st.write(chat["message"])
 
 if command: 
     with st.chat_message("user"):
