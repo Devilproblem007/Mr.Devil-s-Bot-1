@@ -27,18 +27,18 @@ if command:
         st.write(command)
         st.session_state.message.append({"role":"user","message":command})
 
-    if "hello" in command:
+    if "Hello" in command:
         with st.chat_message("bot"):
             st.write("Hi How can i help you.")
             st.session_state.message.append({"role":"bot","message":"Hi How can i help you."})
-    elif "who" in command:
+    elif "Who are you" in command:
         with st.chat_message("bot"):
             st.write("Im Mr.Devil's ai assistant")
             st.session_state.message.append({"role":"bot","message":"Im Mr.Devil's ai assistant"})
-    elif "hi" in command:
+    elif "Oii" in command:
         with st.chat_message("bot"):
-            st.write("hello good morning")
-            st.session_state.message.append({"role":"bot","message":"hello good morning"})
+            st.write("Sollu buddy")
+            st.session_state.message.append({"role":"bot","message":"Sollu buddy"})
     
     else:
         with st.chat_message("bot"):
