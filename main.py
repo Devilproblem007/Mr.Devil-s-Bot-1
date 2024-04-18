@@ -7,7 +7,7 @@ def ai(txt):
         if 'generateContent' in m.supported_generation_methods:
             print(m.name)
     model = genai.GenerativeModel('gemini-pro')
-    response = model.generate_content("from now your name is Mr.Devil and your a ethical hacker and cloud data engineer , your real name is Mukesh and reply to this in short: "+txt)
+    response = model.generate_content("from now your name is Mr.Devil and your a ethical hacker , your real name is Mukesh and reply to this in short: "+txt)
     return response.text
 
 
@@ -22,7 +22,7 @@ for chat in st.session_state.message:
     with st.chat_message(chat["role"]):
         st.write(chat["message"])
 
-if command:
+if "oii" command:
     with st.chat_message("user"):
         st.write(command)
         st.session_state.message.append({"role":"user","message":command})
@@ -30,7 +30,7 @@ if command:
     if "hello" in command:
         with st.chat_message("bot"):
             st.write("Hi How can i help you.")
-            st.session_state.message.append({"role":"bot","message":"Hi How can i help you."})
+            st.session_state.message.append({"role":"bot","message":"Hi How can i help you"})
     elif "who" in command:
         with st.chat_message("bot"):
             st.write("Im Mr.Devil's ai assistant")
